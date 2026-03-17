@@ -1,0 +1,37 @@
+﻿/*
+ * Interface.h
+ *
+ * Created: 20/11/2023 06:48:55 م
+ *  Author: Moustafa El-hanash
+ */ 
+
+
+#ifndef GPIO_INTERFACE_H_
+#define GPIO_INTERFACE_H_
+
+#include "STD_Types.h"
+#include "Error_Types.h"
+
+ERROR_STATE_t GPIO_SETPIN_DIRECTION(GPIO_PORT_t port , GPIO_PIN_t pin ,GPIO_STATUS_t status);
+ERROR_STATE_t GPIO_SETPORT_DIRECTION(GPIO_PORT_t port , GPIO_STATUS_t status);
+
+ERROR_STATE_t GPIO_SETPIN_VALUE(GPIO_PORT_t port , GPIO_PIN_t pin ,GPIO_STATE_t state);
+ERROR_STATE_t GPIO_SETPORT_VALUE(GPIO_PORT_t port , GPIO_STATE_t state);
+
+ERROR_STATE_t GPIO_TOGPIN_VALUE(GPIO_PORT_t port ,GPIO_PIN_t pin);
+ERROR_STATE_t GPIO_TOGPORT_VALUE(GPIO_PORT_t port);
+
+uint8 GPIO_READPIN_VALUE(GPIO_PORT_t port ,GPIO_PIN_t pin);
+uint8 GPIO_READPORT_VALUE(GPIO_PORT_t port);
+
+ERROR_STATE_t GPIO_SETPIN_PULLUP(GPIO_PORT_t port , GPIO_PIN_t pin);
+
+
+ERROR_STATE_t GPIO_WRITE_ON_PORT(GPIO_PORT_t port , uint8 port_value);
+
+
+
+
+
+
+#endif /* GPIO_INTERFACE_H_ */

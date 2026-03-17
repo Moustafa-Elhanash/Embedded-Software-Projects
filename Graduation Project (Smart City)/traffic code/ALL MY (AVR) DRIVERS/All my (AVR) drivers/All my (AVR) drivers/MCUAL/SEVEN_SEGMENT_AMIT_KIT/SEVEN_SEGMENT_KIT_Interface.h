@@ -1,0 +1,22 @@
+﻿/*
+ * SEVEN_SEGMENT_KIT_Interface.h
+ *
+ * Created: 25/11/2023 02:32:08 م
+ *  Author: Moustafa El-hanash
+ */ 
+
+
+#ifndef SEVEN_SEGMENT_KIT_INTERFACE_H_
+#define SEVEN_SEGMENT_KIT_INTERFACE_H_
+
+void SEVEN_SEGMENT_KIT_INIT(void);
+void SEVEN_SEGMENT_KIT_EN1_ONLY(void);
+void SEVEN_SEGMENT_KIT_EN2_ONLY(void);
+void SEVEN_SEGMENT_KIT_ENABLE_ALL(void);
+void SEVEN_SEGMENT_KIT_DISABLE_ALL(void);
+
+void SEVEN_SEGMENT_KIT_DISPLAY(uint8 num);
+
+
+
+#endif /* SEVEN_SEGMENT_KIT_INTERFACE_H_ */

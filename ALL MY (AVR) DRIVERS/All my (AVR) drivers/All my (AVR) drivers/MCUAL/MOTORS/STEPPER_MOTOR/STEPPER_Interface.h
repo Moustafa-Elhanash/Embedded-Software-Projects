@@ -1,0 +1,20 @@
+﻿/*
+ * STEPPER_Interface.h
+ *
+ * Created: 08/12/2023 06:34:07 م
+ *  Author: MOUSTAFA
+ */ 
+
+
+#ifndef STEPPER_INTERFACE_H_
+#define STEPPER_INTERFACE_H_
+
+ERROR_STATE_t STEPPER_INIT(const STEPPER_CONFIG_t *stepper);
+ERROR_STATE_t STEPPER_ROTATE(const STEPPER_CONFIG_t *stepper);
+
+ERROR_STATE_t STEPPER_BRAKE(const STEPPER_CONFIG_t *stepper);
+
+
+
+
+#endif /* STEPPER_INTERFACE_H_ */

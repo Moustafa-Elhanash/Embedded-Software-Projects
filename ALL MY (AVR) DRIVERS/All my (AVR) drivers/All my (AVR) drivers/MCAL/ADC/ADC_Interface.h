@@ -1,0 +1,95 @@
+﻿/*
+ * ADC_Interface.h
+ *
+ * Created: 03/02/2024 08:54:32 م
+ *  Author: win10
+ */ 
+
+
+#ifndef ADC_INTERFACE_H_
+#define ADC_INTERFACE_H_
+
+/************************************************************************/
+/* Options of channel of input of ADC_GET_CHANNEL_READING function 
+    0-  ADC_SINGLE_ENDED_CH0
+    1-  ADC_SINGLE_ENDED_CH1
+    2-  ADC_SINGLE_ENDED_CH2
+    3-  ADC_SINGLE_ENDED_CH3
+    4-  ADC_SINGLE_ENDED_CH4
+    5-  ADC_SINGLE_ENDED_CH5
+    6-  ADC_SINGLE_ENDED_CH6
+    7-  ADC_SINGLE_ENDED_CH7
+	8-  ADC_DIFFERENTIAL_A0_A0_10X_GAIN                   
+	9-  ADC_DIFFERENTIAL_A1_A0_10X_GAIN
+   10-  ADC_DIFFERENTIAL_A0_A0_200X_GAIN
+   11-  ADC_DIFFERENTIAL_A1_A0_200X_GAIN
+   12-  ADC_DIFFERENTIAL_A2_A2_10X_GAIN
+   13-  ADC_DIFFERENTIAL_A3_A2_10X_GAIN
+   14-  ADC_DIFFERENTIAL_A2_A2_200X_GAIN
+   15-  ADC_DIFFERENTIAL_A3_A2_200X_GAIN
+   16-  ADC_DIFFERENTIAL_A0_A1
+   17-  ADC_DIFFERENTIAL_A1_A1
+   18-  ADC_DIFFERENTIAL_A2_A1
+   19-  ADC_DIFFERENTIAL_A3_A1
+   20-  ADC_DIFFERENTIAL_A4_A1
+   21-  ADC_DIFFERENTIAL_A5_A1
+   22-  ADC_DIFFERENTIAL_A6_A1
+   23-  ADC_DIFFERENTIAL_A7_A1
+   24-  ADC_DIFFERENTIAL_A0_A2
+   25-  ADC_DIFFERENTIAL_A1_A2
+   26-  ADC_DIFFERENTIAL_A2_A2
+   27-  ADC_DIFFERENTIAL_A3_A2
+   28-  ADC_DIFFERENTIAL_A4_A2
+   29-  ADC_DIFFERENTIAL_A5_A2
+   30-  ADC_TESTING_1_22v_VBG
+   31-  ADC_TESTING_0v_GND
+	
+*/
+/************************************************************************/
+
+#define  ADC_SINGLE_ENDED_CH0                  0
+#define	 ADC_SINGLE_ENDED_CH1				   1
+#define	 ADC_SINGLE_ENDED_CH2				   2
+#define	 ADC_SINGLE_ENDED_CH3				   3
+#define	 ADC_SINGLE_ENDED_CH4				   4
+#define	 ADC_SINGLE_ENDED_CH5				   5
+#define	 ADC_SINGLE_ENDED_CH6				   6
+#define	 ADC_SINGLE_ENDED_CH7				   7
+#define	 ADC_DIFFERENTIAL_A0_A0_10X_GAIN	   8
+#define	 ADC_DIFFERENTIAL_A1_A0_10X_GAIN	   9
+#define	 ADC_DIFFERENTIAL_A0_A0_200X_GAIN	   10
+#define	 ADC_DIFFERENTIAL_A1_A0_200X_GAIN	   11
+#define	 ADC_DIFFERENTIAL_A2_A2_10X_GAIN	   12
+#define	 ADC_DIFFERENTIAL_A3_A2_10X_GAIN	   13
+#define	 ADC_DIFFERENTIAL_A2_A2_200X_GAIN	   14
+#define	 ADC_DIFFERENTIAL_A3_A2_200X_GAIN	   15
+#define	 ADC_DIFFERENTIAL_A0_A1				   16
+#define	 ADC_DIFFERENTIAL_A1_A1				   17
+#define	 ADC_DIFFERENTIAL_A2_A1				   18
+#define	 ADC_DIFFERENTIAL_A3_A1				   19
+#define	 ADC_DIFFERENTIAL_A4_A1				   20
+#define	 ADC_DIFFERENTIAL_A5_A1				   21
+#define	 ADC_DIFFERENTIAL_A6_A1				   22
+#define	 ADC_DIFFERENTIAL_A7_A1				   23
+#define	 ADC_DIFFERENTIAL_A0_A2				   24
+#define	 ADC_DIFFERENTIAL_A1_A2				   25
+#define	 ADC_DIFFERENTIAL_A2_A2				   26
+#define	 ADC_DIFFERENTIAL_A3_A2				   27
+#define	 ADC_DIFFERENTIAL_A4_A2				   28
+#define	 ADC_DIFFERENTIAL_A5_A2				   29
+#define	 ADC_TESTING_1_22v_VBG				   30
+#define  ADC_TESTING_0v_GND					   31
+
+
+ 
+void ADC_INIT(void);
+
+ERROR_STATE_t ADC_START_CONVERSION_SYN(uint8 channel, uint16 *Result);
+/* global interrupt must enabled before using this function*/
+ERROR_STATE_t ADC_START_CONVERSION_ASYN(uint8 channel, uint16 *Result , void(*NotificationFun)(void));
+
+ERROR_STATE_t ADC_START_CHAIN_CONVERSION_ASYN(uint8 channel, uint16 *Result , void(*NotificationFun)(void));
+
+
+
+#endif /* ADC_INTERFACE_H_ */
